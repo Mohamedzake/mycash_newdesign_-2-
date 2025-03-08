@@ -9,6 +9,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Header from "@/src/components/Header";
 import WhatsApp from "@/src/components/WhatsApp";
 import Footer from "@/src/components/Footer";
+import Link from "next/link";
 const ArticleDetails = () => {
   const locale = useLocale();
   const { articleid } = useParams();
@@ -69,6 +70,17 @@ const ArticleDetails = () => {
         <div className="text-base md:text-lg lg:text-xl leading-10 font-normal flex flex-row items-center gap-2">
           {isArabic === true ? article.conclusionAr : article.conclusionEn}
         </div>
+      </div>
+
+      <div className="flex justify-center items-center">
+        <button className="flex justify-center items-center">
+          <Link
+            href={`/${locale}/articles`}
+            className="text-white bg-primary-green hover:bg-primary-green-dark flex justify-center items-center p-5 rounded-xl"
+          >
+            Back to Articles
+          </Link>
+        </button>
       </div>
 
       <Footer />

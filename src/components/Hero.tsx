@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import { useLocale, useTranslations } from "next-intl";
 // import Link from 'next/link';
 import Image from "next/image";
