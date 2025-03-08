@@ -9,6 +9,7 @@ import { useLocale } from "next-intl";
 
 // import locale from "next-intl/locale";
 const Solutions = () => {
+  const locale = useLocale();
   const t = useTranslations("solutions");
   const solutionsData = [
     {
@@ -17,7 +18,7 @@ const Solutions = () => {
       desc: t("ai_solutions_desc"),
       imgSrcAr: "solutions/ai_ar.webp",
       imgSrcEn: "solutions/ai_en.webp",
-      link: "/solutionsai",
+      link: `/${locale}/solutionsai`,
     },
     {
       id: 2,
@@ -25,7 +26,7 @@ const Solutions = () => {
       desc: t("sales_solutions_desc"),
       imgSrcAr: "solutions/sales_ar.webp",
       imgSrcEn: "solutions/sales_en.webp",
-      link: "/sales",
+      link: `/${locale}/sales`,
     },
     {
       id: 3,
@@ -33,10 +34,10 @@ const Solutions = () => {
       desc: t("pos_solutions_desc"),
       imgSrcAr: "solutions/pos_ar.webp",
       imgSrcEn: "solutions/pos_en.webp",
-      link: "/pos",
+      link: `/${locale}/payments`,
     },
   ];
-  const locale = useLocale();
+
   const isArabic = locale === "ar";
 
   return (
