@@ -10,7 +10,7 @@
 //     </div>
 //   );
 // }
-"use client";
+// "use client";
 import React from "react";
 
 import Hero from "../../components/Hero";
@@ -19,23 +19,23 @@ import Hero from "../../components/Hero";
 // import AboutMyCash from "./_components/AboutMyCash";
 // import Agreements from "./_components/Agreements";
 // import Promotion from "./_components/Promotion";
-// import ContactUs from "./_components/ContactUs";
-// import Footer from "./_components/Footer";
-// import WhatsApp from "./_components/WhatsApp";
+import ContactUs from "./../../components/ContactUs";
+import Footer from "./../../components/Footer";
+import WhatsApp from "./../../components/WhatsApp";
 export default function Home() {
   return (
     <>
       <main className="">
         <Hero />
 
-        {/* <WhatsApp />
-        <Solutions />
-        <Carousel />
-        <AboutMyCash />
-        <Agreements />
-        <Promotion />
+        <WhatsApp />
+        {/* <Solutions /> */}
+        {/* <Carousel /> */}
+        {/* <AboutMyCash /> */}
+        {/* <Agreements /> */}
+        {/* <Promotion /> */}
         <ContactUs />
-        <Footer /> */}
+        <Footer />
       </main>
     </>
   );

@@ -1,18 +1,17 @@
 "use client";
 import React from "react";
-// import OurVisionIntro from "../_components/OurVisionIntro";
-// import Footer from "../_components/Footer";
-// import ContactUs from "../_components/ContactUs";
-// import OurVisionBody from "../_components/OurVisionBody";
+import OurVisionIntro from "../../../components/OurVisionIntro";
+import Footer from "../../../components/Footer";
+import ContactUs from "../../../components/ContactUs";
+import OurVisionBody from "../../../components/OurVisionBody";
 
 const page = () => {
   return (
     <section>
-      hh
-      {/* <OurVisionIntro /> 
-    <OurVisionBody />
-    <ContactUs />
-    <Footer /> */}
+      <OurVisionIntro />
+      <OurVisionBody />
+      <ContactUs />
+      <Footer />
     </section>
   );
 };

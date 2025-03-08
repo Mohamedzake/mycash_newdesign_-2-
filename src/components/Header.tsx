@@ -18,19 +18,18 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const currentPath = usePathname();
-
+  console.log(currentPath);
   const t = useTranslations("navbar");
 
   const menuItems = [
     { href: "/", label: t("main_page") },
     // { href: "/reachmycash", label: t("start_now") },
-    { href: `/${locale}/about`, label: t("about_us") },
 
     { href: `/${locale}/whoweare`, label: t("about_us") },
     { href: "#", label: t("solutions"), dropdown: true },
-    { href: "/package", label: t("packages") },
+    { href: `/${locale}/package`, label: t("packages") },
     { href: `/${locale}/articles`, label: t("articles") },
-    { href: "/contactus", label: t("contact_us") },
+    { href: `/${locale}/contactus`, label: t("contact_us") },
   ];
 
   const toggleMenu = () => {
@@ -97,21 +96,21 @@ export default function Header() {
                   {item.dropdown && openDropdown === "solutions" && (
                     <div className="absolute z-10 bg-white shadow-lg rounded-lg mt-2 py-2 w-48 text-start ">
                       <Link
-                        href="/solutionsai"
+                        href={`/${locale}/solutionsai`}
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100 "
                         onClick={() => setOpenDropdown(null)}
                       >
                         {t("solutions_ai")}
                       </Link>
                       <Link
-                        href="/sales"
+                        href={`/${locale}/sales`}
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         onClick={() => setOpenDropdown(null)}
                       >
                         {t("solutions_sales")}
                       </Link>
                       <Link
-                        href="/payments"
+                        href={`/${locale}/payments`}
                         className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                         onClick={() => setOpenDropdown(null)}
                       >
@@ -172,7 +171,7 @@ export default function Header() {
                 {item.dropdown && openDropdown === "solutions" && (
                   <div className="leading-7 px-2">
                     <Link
-                      href="/solutionsai"
+                      href={`/${locale}/solutionsai`}
                       className={`block ${
                         currentPath === "/solutionsai"
                           ? "text-primary-green font-bold"
@@ -183,7 +182,7 @@ export default function Header() {
                     </Link>
 
                     <Link
-                      href="/sales"
+                      href={`/${locale}/sales`}
                       className={`block ${
                         currentPath === "/solutionsai"
                           ? "text-primary-green font-bold"
@@ -194,7 +193,7 @@ export default function Header() {
                     </Link>
 
                     <Link
-                      href="/payments"
+                      href={`/${locale}/payments`}
                       className={`block ${
                         currentPath === "/solutionsai"
                           ? "text-primary-green font-bold"
