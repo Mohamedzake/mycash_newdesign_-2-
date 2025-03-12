@@ -10,7 +10,7 @@ import Image from "next/image";
 import { MdDone } from "react-icons/md";
 
 import { PricingMobile } from "./PricingMobile";
-import { useLocale } from "next-intl";
+import { getLocale } from "next-intl/server";
 const dataTitle = [
   {
     id: 1,
@@ -230,8 +230,8 @@ const dataFeatures = [
   },
 ];
 
-export const Pricing = () => {
-  const locale = useLocale();
+export const Pricing = async () => {
+  const locale = await getLocale();
 
   const isArabic = locale === "ar";
   return (

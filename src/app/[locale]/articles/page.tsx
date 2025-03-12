@@ -1,24 +1,22 @@
-"use client";
 import React from "react";
-import Header from "../../../components/Header";
 import WhatsApp from "../../../components/WhatsApp";
-import { useLocale, useTranslations } from "next-intl";
-// import { articles } from "@/app/articles/articles";
-// import Image from "next/image";
+
 import ContactUs from "../../../components/ContactUs";
 import Footer from "../../../components/Footer";
 import Link from "next/link";
 import { articles1 } from "./articles";
 import Image from "next/image";
-const Articles = () => {
-  const locale = useLocale();
+import { getLocale, getTranslations } from "next-intl/server";
+const Articles = async () => {
+  const locale = await getLocale();
+  const t = await getTranslations("Articles");
+
   const isArabic = locale === "ar";
-  const t = useTranslations("Articles");
+
   console.log(articles1);
   return (
     <section>
       <div className="bg-articles_bg bg-cover bg-no-repeat bg-center w-full aspect-square h-[40vh] md:h-[60vh] relative  ">
-        <Header />
         <WhatsApp />
 
         <div className="flex flex-col justify-center items-center gap-10 w-full h-full text-center ">
@@ -59,23 +57,7 @@ const Articles = () => {
           </Link>
         ))}
       </div>
-      {/* <div className=" bottom-60 w-full m-auto ">
-        <div className=" m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center">
-          {articles1.map((article) => (
-            <Link
-              href={`/${locale}/articles/${article.id}`}
-              key={article.id}
-              className="w-10/12 p-4 text-center m-4 rounded-2xl shadow-[rgba(0,0,0,0.2)_0px_4px_12px] bg-white"
-            >
-            
-              <h3 className="text-xl font-bold text-primary-blue">
-                {article.titleAr}
-              </h3>
-              <p>{article.descriptionAr}</p>
-            </Link>
-          ))}
-        </div>
-      </div> */}
+
       <ContactUs />
       <Footer />
     </section>

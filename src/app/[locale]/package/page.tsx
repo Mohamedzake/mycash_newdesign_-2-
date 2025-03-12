@@ -1,13 +1,13 @@
-// "use client";
 import React from "react";
-// import Header from "../../../components/Header";
-import { useTranslations } from "next-intl";
+
 import ContactUs from "../../../components/ContactUs";
 import Footer from "../../../components/Footer";
 import { Pricing } from "../../../components/Pricing";
 import WhatsApp from "../../../components/WhatsApp";
-const Package = () => {
-  const t = useTranslations("package");
+import { getTranslations } from "next-intl/server";
+const Package = async () => {
+  const t = await getTranslations("package");
+
   return (
     <section className="">
       {/* <Header /> */}

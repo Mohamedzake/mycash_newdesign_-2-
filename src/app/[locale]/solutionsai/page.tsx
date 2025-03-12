@@ -1,6 +1,4 @@
-"use client";
 import Image from "next/image";
-// import Header from "../_components/Header"
 import { TripleHeadings } from "../../../components/TripleHeadings";
 
 import ai_ar from "../../../../public/ai_ar.webp";
@@ -8,10 +6,11 @@ import ai_ar from "../../../../public/ai_ar.webp";
 import ContactUs from "../../../components/ContactUs";
 import Footer from "../../../components/Footer";
 import WhatsApp from "../../../components/WhatsApp";
-import { useTranslations } from "next-intl";
 import FreeTrialButton from "../../../components/FreeTrialButton";
-const Solutions = () => {
-  const t = useTranslations("solutionsai");
+import { getTranslations } from "next-intl/server";
+const Solutions = async () => {
+  const t = await getTranslations("solutionsai");
+
   const aiData = [
     { point: t("point1"), desc: t("desc1") },
     { point: t("point2"), desc: t("desc2") },

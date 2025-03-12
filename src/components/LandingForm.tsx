@@ -1,11 +1,10 @@
 import React from "react";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Form from "./Form";
+import { getTranslations } from "next-intl/server";
 
-const LandingForm = () => {
-  const t = useTranslations("landing");
-
+const LandingForm = async () => {
+  const t = await getTranslations("landing");
   return (
     <>
       <section className="container mx-auto pt-12 ">

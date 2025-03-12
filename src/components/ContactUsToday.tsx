@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import React from "react";
 
 import { FaPhoneAlt } from "react-icons/fa";
@@ -6,10 +5,10 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { IoMdPin } from "react-icons/io";
 
 import ContactUsForm from "./ContactUsForm";
+import { getTranslations } from "next-intl/server";
 
-const ContactUsToday = () => {
-  const t = useTranslations("contactustoday");
-
+const ContactUsToday = async () => {
+  const t = await getTranslations("contactustoday");
   const contactData = [
     {
       text: t("phone_number"),

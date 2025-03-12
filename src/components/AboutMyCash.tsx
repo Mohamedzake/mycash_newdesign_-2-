@@ -8,13 +8,15 @@ import ar_mycashscreen from "../../public/ar_mycashscreen.webp";
 import en_mycashscreen from "../../public/en_mycashscreen.webp";
 
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 
-function AboutMyCash() {
-  const locale = useLocale();
+import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
+
+async function AboutMyCash() {
+  const locale = await getLocale();
+  const t = await getTranslations("mycashai");
+
   const isArabic = locale === "ar";
-  const t = useTranslations("mycashai");
   return (
     <section className=" m-auto container mx-auto mt-12">
       <Image

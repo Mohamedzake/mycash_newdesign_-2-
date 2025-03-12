@@ -9,9 +9,9 @@ import { BsExclamationCircleFill } from "react-icons/bs";
 import { Fragment } from "react";
 import poscloud from "@/public/devices/poscloud.webp";
 import SAR from "@/public/sar/SAR.png";
-import { useLocale } from "next-intl";
+import { getLocale } from "next-intl/server";
 
-export const PricingMobile = () => {
+export const PricingMobile = async () => {
   const dataTitleSoft = [
     {
       id: 1,
@@ -610,7 +610,8 @@ export const PricingMobile = () => {
       cloud: false,
     },
   ];
-  const locale = useLocale();
+
+  const locale = await getLocale();
 
   const isArabic = locale === "ar";
 

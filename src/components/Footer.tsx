@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
 import React from "react";
-import { useTranslations } from "use-intl";
 
 import google_app from "@/public/google_app.webp";
 import logo_white from "@/public/logo_white.webp";
@@ -13,9 +11,10 @@ import { AiOutlineTikTok } from "react-icons/ai";
 
 import Copyright from "./Copyright";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-const Footer = () => {
-  const t = useTranslations("footer");
+const Footer = async () => {
+  const t = await getTranslations("footer");
   const footerData = [
     {
       href: "https://www.facebook.com/Mycash360",

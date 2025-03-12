@@ -1,9 +1,10 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import React from "react";
 
-const FreeTrialButton = () => {
-  const t = useTranslations("Globals");
+const FreeTrialButton = async () => {
+  const t = await getTranslations("Globals");
+
   return (
     <div className="flex flex-row justify-center gap-x-2 px-1 pb-2">
       <Link

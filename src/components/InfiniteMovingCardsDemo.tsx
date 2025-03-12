@@ -1,10 +1,7 @@
-"use client";
-
 import React from "react";
 import { InfiniteMovingCards } from "./infinite-moving-cards";
-// import { useLocale } from "../layout";
+
 export function InfiniteMovingCardsDemo() {
-  // const { currentLocale } = useLocale();
   return (
     <div
       dir="ltr"

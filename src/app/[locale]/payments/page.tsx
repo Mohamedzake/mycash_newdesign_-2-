@@ -1,16 +1,15 @@
-"use client";
 import Image from "next/image";
-// import Header from "../_components/Header"
 
 import pos_solutions_ar from "../../../../public/pos_solutions_ar.webp";
 import Footer from "../../../components/Footer";
 import ContactUs from "../../../components/ContactUs";
 import WhatsApp from "../../../components/WhatsApp";
-import { useTranslations } from "next-intl";
 import FreeTrialButton from "../../../components/FreeTrialButton";
+import { getTranslations } from "next-intl/server";
 
-const Payments = () => {
-  const t = useTranslations("solutionpayments");
+const Payments = async () => {
+  const t = await getTranslations("solutionpayments");
+
   const posRight = [
     {
       text: t("point1"),

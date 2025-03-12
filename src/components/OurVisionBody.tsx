@@ -5,9 +5,10 @@ import mission from "@/public/whoweare/mission.webp";
 import { PiLightbulbFilamentLight } from "react-icons/pi";
 
 import { TripleHeadings } from "./TripleHeadings";
-import { useTranslations } from "next-intl";
-const OurVisionBody = () => {
-  const t = useTranslations("OurVisionBody");
+import { getTranslations } from "next-intl/server";
+const OurVisionBody = async () => {
+  const t = await getTranslations("OurVisionBody");
+
   return (
     <div className="w-[90%] m-auto pb-20">
       <TripleHeadings description={t("heading")} />

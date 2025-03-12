@@ -1,10 +1,8 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
-// import Header from "./Header";
+const OurVisionIntro = async () => {
+  const t = await getTranslations("ourvisionintro");
 
-const OurVisionIntro = () => {
-  const t = useTranslations("ourvisionintro");
   return (
     <section className="">
       <div className="bg-aboutus bg-cover bg-no-repeat bg-center w-full aspect-[1.3/1] xl:h-[488px]">

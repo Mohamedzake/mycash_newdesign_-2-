@@ -1,21 +1,19 @@
 import React from "react";
-// import Header from "./Header";
-import { useLocale, useTranslations } from "next-intl";
-// import Link from 'next/link';
+
 import Image from "next/image";
 
 import ar_hero_web from "../../public/ar_her_web.webp";
 import en_hero_web from "../../public/en_hero_web.webp";
 import hero_mobile from "../../public/hero_mobile.webp";
-// import Brands from "./Brands";
-import FreeTrialButton from "./FreeTrialButton";
-// import { useLocale } from "./LocaleProvider";
-// // import CompanyLogos from "./CompanyLogos";
-// import { InfiniteMovingCardsDemo } from "./InfiniteMovingCardsDemo";
 
-const Hero = () => {
-  const t = useTranslations("mainpage");
-  const locale = useLocale();
+import FreeTrialButton from "./FreeTrialButton";
+import { InfiniteMovingCardsDemo } from "./InfiniteMovingCardsDemo";
+import { getLocale, getTranslations } from "next-intl/server";
+
+const Hero = async () => {
+  const locale = await getLocale();
+  const t = await getTranslations("mainpage");
+
   const isArabic = locale === "ar";
 
   return (
@@ -47,7 +45,7 @@ const Hero = () => {
           />{" "}
         </div>
 
-        {/* <InfiniteMovingCardsDemo /> */}
+        <InfiniteMovingCardsDemo />
       </div>
     </div>
   );

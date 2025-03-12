@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import OurVisionIntro from "../../../components/OurVisionIntro";
 import Footer from "../../../components/Footer";

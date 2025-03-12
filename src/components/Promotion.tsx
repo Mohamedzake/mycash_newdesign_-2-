@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import mobiles_ar from "@/public/mobiles_ar.webp";
 import mobiles_en from "@/public/mobiles_en.webp";
@@ -8,10 +6,12 @@ import google_app from "@/public/google_app.webp";
 import svg from "@/public/svg2-removebg-preview.webp";
 import left_Clouds from "@/public/left_clouds.webp";
 import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
 
-const PromoSection: React.FC = () => {
-  const t = useTranslations("promosection");
-  const locale = useLocale();
+const PromoSection: React.FC = async () => {
+  const locale = await getLocale();
+  const t = await getTranslations("promosection");
+
   const isArabic = locale === "ar";
 
   return (

@@ -1,5 +1,6 @@
+"use client";
+
 import { useLocale, useTranslations } from "next-intl";
-// import Link from 'next/link'
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

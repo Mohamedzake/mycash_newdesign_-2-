@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-// import Header from "../_components/Header";
 
 import WhyMyCash from "../../../components/WhyMyCash";
 import LandingForm from "../../../components/LandingForm";
@@ -13,7 +11,6 @@ import WhatsApp from "../../../components/WhatsApp";
 const LandingPage = () => {
   return (
     <section className=" ">
-      {/* <Header /> */}
       <WhatsApp />
       <LandingForm />
       <WhyMyCash />

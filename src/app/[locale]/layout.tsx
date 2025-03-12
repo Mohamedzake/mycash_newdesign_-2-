@@ -51,14 +51,11 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  // Ensure that the incoming `locale` is valid
   const { locale } = await params;
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
   const fontClass =
     locale === "en" ? ibmPlexSans.className : ibmPlexArabic.className;
@@ -100,17 +97,7 @@ export default async function LocaleLayout({
           <Header />
           {children}
         </NextIntlClientProvider>
-        {/* Wrap children in LocaleProvider */}
-        {/* <LocaleProvider defaultLocale={currentLocale}>
-          {children}
-        </LocaleProvider> */}
       </body>
-      {/* <body>
-        <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
-        </NextIntlClientProvider>
-      </body> */}
     </html>
   );
 }

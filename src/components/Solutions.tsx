@@ -1,16 +1,15 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import { useTranslations } from "use-intl";
+
 import { TripleHeadings } from "./TripleHeadings";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
-import { useLocale } from "next-intl";
 
-// import locale from "next-intl/locale";
-const Solutions = () => {
-  const locale = useLocale();
-  const t = useTranslations("solutions");
+import { getLocale, getTranslations } from "next-intl/server";
+
+const Solutions = async () => {
+  const locale = await getLocale();
+  const t = await getTranslations("solutions");
   const solutionsData = [
     {
       id: 1,
